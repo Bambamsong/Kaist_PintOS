@@ -25,4 +25,12 @@ void process_close_file(int fd);
 
 struct thread *get_child_process(int pid);
 
+struct aux_data {
+	struct file *file ;
+	void * va; // 사실 없어도 됨
+	bool writable;
+	uint32_t page_read_bytes;
+	uint32_t page_zero_bytes;
+	off_t ofs; 
+};
 #endif /* userprog/process.h */
